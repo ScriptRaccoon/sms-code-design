@@ -1,0 +1,95 @@
+body {
+    color: #222;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#codeForm {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 1000px;
+    font-size: 20px;
+    padding: 20px 0px;
+}
+
+#codeForm h2 {
+    font-weight: 300;
+}
+
+.shrinkable {
+    transition: transform 100ms linear;
+}
+
+.shrinkable.shrink {
+    transform: scale(0.9);
+}
+
+#code {
+    transition: transform 100ms linear;
+}
+
+#code input {
+    font-size: 100px;
+    width: 100px;
+    text-align: center;
+    border: 1px solid #aaa;
+    border-radius: 15px;
+    margin: 8px;
+}
+
+#code input:active,
+#code input:focus {
+    outline: none;
+    border: 1px solid #222;
+}
+
+#code input.error {
+    border: 1px solid red;
+}
+
+#code input:disabled {
+    color: #222;
+    background-color: #eee;
+}
+
+#feedback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#feedbackImage {
+    width: 60px;
+    padding: 30px;
+}
+
+.growable {
+    transform: scale(0.5);
+    opacity: 0;
+    transition: transform 350ms, opacity 350ms;
+    transition-timing-function: cubic-bezier(0.46, 0.03, 0, 1.58);
+}
+
+.growable.grow {
+    opacity: 1;
+    transform: scale(1);
+}
+
+input[type="button"] {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-family: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+#sendButton {
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: 1px solid #222;
+}
+
+#sendButton:hover {
+    background-color: #eee;
+}

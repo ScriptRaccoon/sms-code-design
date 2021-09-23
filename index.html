@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Code</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="codeForm">
+        <h2>Enter your SMS code</h2>
+        <div id="code" class="shrinkable">
+            <input disabled type="text" id="input1" min="0" max="9"
+            /><input disabled type="text" id="input2" min="0" max="9"
+            /><input disabled type="text" id="input3" min="0" max="9"
+            /><input disabled type="text" id="input4" min="0" max="9"
+            /><input disabled type="text" id="input5" min="0" max="9"
+            /><input disabled type="text" id="input6" min="0" max="9"
+        /></div>
+        <div id="feedback">
+            <img class="growable" id="feedbackImage" src="img/error.png" alt="feedback">
+            <input class="growable" id="sendButton" type="button" value="Send another code" />
+        </div>
+    </section> 
+    <script src="main.js"></script>   
+</body>
+</html>
