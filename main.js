@@ -62,13 +62,13 @@ async function evaluate(code) {
 
 function handleSuccess() {
     feedbackImage.src = "/img/success.png";
-    feedbackImage.onload(() => {
+    feedbackImage.onload = () => {
         feedbackImage.classList.add("grow");
         feedback.style.height = "300px";
         setTimeout(() => {
             window.location = successURL;
         }, 1500);
-    });
+    };
 }
 
 // HANDLE ERROR
