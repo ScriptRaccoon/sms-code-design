@@ -52,18 +52,34 @@ function handleInput(e, codeInput) {
 async function evaluate(code) {
     const isValid = await serverSideValidation(code);
     if (isValid) {
-        feedbackImage.src = "/img/success.png";
+        handleSuccess();
+    } else {
+        handleError();
+    }
+}
+
+// HANDLE SUCCESS
+
+function handleSuccess() {
+    feedbackImage.src = "/img/success.png";
+    feedbackImage.onload(() => {
         feedbackImage.classList.add("grow");
+        feedback.style.height = "300px";
         setTimeout(() => {
             window.location = successURL;
         }, 1500);
-    } else {
-        feedbackImage.src = "/img/error.png";
-        feedbackImage.classList.add("grow");
-        setTimeout(() => {
-            sendButton.classList.add("grow");
-        }, 300);
-    }
+    });
+}
+
+// HANDLE ERROR
+
+function handleError() {
+    feedbackImage.src = "/img/error.png";
+    feedbackImage.classList.add("grow");
+    feedback.style.height = "180px";
+    setTimeout(() => {
+        sendButton.classList.add("grow");
+    }, 300);
 }
 
 // SIMULATE SERVER-SIDE VALIDATION
@@ -88,4 +104,5 @@ function restoreInputs() {
     codeArea.classList.remove("shrink");
     codeInputs[0].disabled = false;
     codeInputs[0].focus();
+    feedback.style.height = "0px";
 }
