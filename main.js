@@ -64,7 +64,7 @@ function handleSuccess() {
     feedbackImage.src = "/img/success.png";
     feedbackImage.onload = () => {
         feedbackImage.classList.add("grow");
-        feedback.style.height = "300px";
+        feedback.style.height = "180px";
         setTimeout(() => {
             window.location = successURL;
         }, 1500);
